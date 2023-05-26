@@ -28,4 +28,19 @@ const router = createRouter({
   routes,
 });
 
-createApp(App).use(router).mount("#app");
+// custom directive
+
+const app = createApp(App);
+
+app.directive("theme", {
+  mounted(elem, binding) {
+    if (binding.value === "primary") {
+      elem.style.backgroundColor = "blue";
+    } else if (binding.value === "warning") {
+      elem.style.backgroundColor = "yellow";
+    } else {
+      elem.style.backgroundColor = "gray";
+    }
+  },
+});
+app.use(router).mount("#app");

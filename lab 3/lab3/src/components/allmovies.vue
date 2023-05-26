@@ -1,5 +1,5 @@
 <template>
-  <h1>All movies</h1>
+  <h1 v-theme="'warning'" >All movies</h1>
   <router-link class="btn btn-primary ms-4" to="/movies/add">create movie</router-link>
 
   <table class="table">
